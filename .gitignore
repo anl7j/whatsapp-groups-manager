@@ -1,6 +1,7 @@
 # Dependencies
 node_modules/
 package-lock.json
+dist/
 
 # WhatsApp Authentication and Session Data (CRITICAL - DO NOT COMMIT)
 auth_info_baileys/

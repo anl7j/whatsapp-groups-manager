@@ -6,6 +6,8 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { WhatsAppManager } from './whatsapp.js';
 
+import fs from 'fs';
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -26,7 +28,15 @@ app.use((req, res, next) => {
   console.log(`[${new Date().toLocaleTimeString()}] ${req.method} ${req.url}`);
   next();
 });
-app.use(express.static(path.join(__dirname, 'public')));
+
+// Serve dist (built shadcn/ui React app) if exists, and public assets
+const distPath = path.join(__dirname, 'dist');
+const publicPath = path.join(__dirname, 'public');
+
+if (fs.existsSync(distPath)) {
+  app.use(express.static(distPath));
+}
+app.use(express.static(publicPath));
 
 // Initialize WhatsApp Manager
 const wa = new WhatsAppManager(io);
@@ -256,6 +266,18 @@ app.get('/api/members/export-csv', async (req, res) => {
   } catch (err) {
     res.status(500).json({ success: false, error: err.message });
   }
+});
+
+// SPA fallback
+app.get('*', (req, res, next) => {
+  if (req.url.startsWith('/api') || req.url.startsWith('/socket.io')) {
+    return next();
+  }
+  const indexDist = path.join(distPath, 'index.html');
+  if (fs.existsSync(indexDist)) {
+    return res.sendFile(indexDist);
+  }
+  res.sendFile(path.join(publicPath, 'index.html'));
 });
 
 // Start Server and automatically start Baileys connection listener

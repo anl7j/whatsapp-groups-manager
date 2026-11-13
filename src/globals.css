@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 24% 7%;
+    --foreground: 210 20% 98%;
+
+    --card: 215 28% 11%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 215 28% 11%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 160 84% 39%;
+    --primary-foreground: 210 20% 98%;
+
+    --secondary: 215 25% 18%;
+    --secondary-foreground: 210 20% 98%;
+
+    --muted: 215 25% 18%;
+    --muted-foreground: 215 16% 65%;
+
+    --accent: 215 25% 18%;
+    --accent-foreground: 210 20% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 215 20% 20%;
+    --input: 215 20% 20%;
+    --ring: 160 84% 39%;
+
+    --radius: 0.75rem;
+  }
+}
+
+* {
+  font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
