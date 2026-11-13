@@ -1,9 +1,21 @@
 {
   "name": "whatsapp-community-manager",
   "version": "1.0.0",
-  "description": "WhatsApp Groups and Communities Management Platform",
+  "description": "Open-source WhatsApp Groups and Communities Management Platform built with Node.js and Baileys",
   "main": "server.js",
   "type": "module",
+  "author": "ANAS ISSA ELHADJ",
+  "license": "MIT",
+  "keywords": [
+    "whatsapp",
+    "baileys",
+    "groups-manager",
+    "communities",
+    "whatsapp-bot",
+    "dashboard",
+    "open-source",
+    "rest-api"
+  ],
   "scripts": {
     "start": "node server.js",
     "dev": "node --watch server.js"
