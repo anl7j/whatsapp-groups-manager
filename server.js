@@ -229,11 +229,14 @@ app.get('/api/groups/:jid/export-csv', async (req, res) => {
       csv += `"${cleanPhone}","${cleanName}","${role}","${p.id}"\n`;
     });
 
-    const safeName = (group.subject || 'group').replace(/[^a-zA-Z0-9\u0600-\u06FF_-]/g, '_');
+    const safeSubject = (group.subject || 'group_members').replace(/[\/\\?%*:|"<>]/g, '_');
+    const encodedName = encodeURIComponent(`${safeSubject}.csv`);
+
     res.setHeader('Content-Type', 'text/csv; charset=utf-8');
-    res.setHeader('Content-Disposition', `attachment; filename="members_${safeName}.csv"`);
+    res.setHeader('Content-Disposition', `attachment; filename="members.csv"; filename*=UTF-8''${encodedName}`);
     res.send(csv);
   } catch (err) {
+    console.error('Error exporting group CSV:', err);
     res.status(500).json({ success: false, error: err.message });
   }
 });
