@@ -1,4 +1,8 @@
-# منصة إدارة مجموعات ومجتمعات واتساب 🚀
+<p align="center">
+  <img src="assets/logo.png" alt="WhatsApp Groups Manager Logo" width="220" style="border-radius: 20px;">
+</p>
+
+# منصة إدارة مجموعات ومجتمعات واتساب
 **Open-Source WhatsApp Groups & Communities Management Platform**
 
 <p align="center">
