@@ -2,109 +2,192 @@
   <img src="assets/logo.png" alt="WhatsApp Groups Manager Logo" width="220" style="border-radius: 20px;">
 </p>
 
-# منصة إدارة مجموعات ومجتمعات واتساب
-**Open-Source WhatsApp Groups & Communities Management Platform**
+<h1 align="center">WhatsApp Groups & Communities Manager</h1>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT">
-  <img src="https://img.shields.io/badge/Node.js-18+-blue.svg" alt="Node.js Version">
-  <img src="https://img.shields.io/badge/Engine-Baileys-emerald.svg" alt="WhatsApp Engine">
-  <img src="https://img.shields.io/badge/PRs-Welcome-brightgreen.svg" alt="PRs Welcome">
-  <img src="https://img.shields.io/badge/Open--Source-100%25-orange.svg" alt="Open Source">
+  <strong>An open-source, high-performance web dashboard & control center for managing WhatsApp groups and communities.</strong>
 </p>
 
-منصة مفتوحة المصدر (Open Source) مبنية بلغة **JavaScript / Node.js** ومحرك **Baileys** لإدارة مجموعات ومجتمعات واتساب بكفاءة وسرعة فائقة، مع واجهة مستخدم عصرية باللغة العربية (RTL)، تدعم تصدير جهات الاتصال وإدارة الأعضاء والوسوم (Group Tags) وواجهة برمجة تطبيقات (REST API).
+<p align="center">
+  <a href="https://github.com/anl7j/whatsapp-groups-manager/blob/main/LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT">
+  </a>
+  <img src="https://img.shields.io/badge/Node.js-18+-blue.svg" alt="Node.js Version">
+  <img src="https://img.shields.io/badge/React-18-61DAFB.svg?logo=react&logoColor=black" alt="React 18">
+  <img src="https://img.shields.io/badge/shadcn%2Fui-authentic-black.svg" alt="shadcn/ui">
+  <img src="https://img.shields.io/badge/Engine-Baileys-emerald.svg" alt="Baileys Engine">
+  <img src="https://img.shields.io/badge/PRs-Welcome-brightgreen.svg" alt="PRs Welcome">
+</p>
+
+<p align="center">
+  <a href="#features">Features</a> •
+  <a href="#tech-stack">Tech Stack</a> •
+  <a href="#getting-started">Getting Started</a> •
+  <a href="#api-reference">API Reference</a> •
+  <a href="#contributing">Contributing</a> •
+  <a href="README.ar.md">🇸🇦 النسخة العربية</a>
+</p>
 
 ---
 
-## 🌟 المزايا الرئيسية (Features)
+## 🌟 Overview
 
-* **استعراض وتصفية المجموعات والمجتمعات**:
-  * جلب لحظي لكافة المجموعات والمجتمعات مع تصنيف دقيق (المجموعات فقط / المجتمعات فقط / التي أنت مشرف فيها / عضو).
-  * عدّادات تفاعلية ديناميكية وإحصائيات مباشرة (KPIs).
-  * شريط بحث ذكي باسم المجموعة أو المعرف.
-* **دليل الأعضاء الموحّد والوسوم (Group Tags Directory)**:
-  * تجميع كافة الأعضاء في دليل شامل بضغطة زر.
-  * وسم (Tag) ملوّن لكل عضو يوضح المجموعة أو المجموعات التابع لها.
-  * فلترة بالوسم وبحث فوري بالاسم أو الرقم.
-  * تصدير مجمع لكافة الأعضاء مع وسوم مجموعاتهم بصيغة CSV (Excel).
-* **إدارة الأعضاء (Members Management)**:
-  * إضافة أعضاء جدد لأي مجموعة برقم الهاتف.
-  * طرد الأعضاء (Kick) مع رسالة تأكيد لحماية المجموعة.
-  * ترقية عضو لمشرف (Promote) / خفض رتبة المشرف (Demote).
-  * تصدير قائمة أرقام ورتب أعضاء أي مجموعة كملف CSV جاهز لبرامج الإرسال والتسويق.
-* **التحكم بالمجموعات وإرسال الرسائل**:
-  * قفل الإرسال للمشرفين فقط (Announcement Mode) أو فتحه للجميع بنقرة زر.
-  * نسخ رابط الدعوة الخاص بالمجموعة مباشرة للحافظة.
-  * إرسال رسائل وإعلانات للمجموعة مباشرة من لوحة التحكم أو عبر الـ API.
-* **تصميم عصري ونظيف**:
-  * واجهة داكنة مريحة للعين بنمط واتساب الحديث.
-  * خالية تماماً من الإيموجي وتعتمد على أيقونات Vector (SVG) احترافية.
-  * دعم التحديث المباشر لحالة الجلسة ورمز الاستجابة السريعة (QR Code) عبر WebSockets.
+**WhatsApp Groups & Communities Manager** is a modern, lightweight, full-stack platform designed to give community leaders, educators, agencies, and e-commerce store owners full visibility and control over their WhatsApp ecosystem.
+
+Powered directly by **Baileys** (WebSocket multi-device protocol) without requiring heavy Chromium/Puppeteer browsers, it consumes minimal memory and CPU while providing real-time synchronization, member extraction, group filtering, and an authentic **shadcn/ui** interface.
 
 ---
 
-## 🛠️ متطلبات التشغيل (Requirements)
-* **Node.js** (إصدار 18 فما فوق).
-* **npm** (إصدار 9 فما فوق).
-* هاتف به تطبيق **واتساب** نشط لمسح رمز الـ QR Code عند أول تشغيل.
+## ✨ Key Features
+
+* **Instant Multi-Device Connection**:
+  * Real-time QR code generation streamed via WebSockets (Socket.io).
+  * Auto-reconnection and persistent local session management.
+
+* **Groups & Communities Segmentation**:
+  * Distinct filters for **Standard Groups**, **Communities**, and **Announcement Groups**.
+  * Role-based breakdown: instantly see groups where you are an **Admin** vs. a **Member**.
+  * Dynamic KPIs tracking total groups, unique reach, and member counts.
+
+* **Unified Member Directory & Group Tags**:
+  * Consolidate members across all groups in one directory.
+  * Multi-group tagging: see exactly which groups each member belongs to with visual tags.
+  * Filter members by group tags and search by name, phone number, or tag.
+
+* **One-Click CSV / Excel Export**:
+  * Export clean member lists per group or globally across all groups.
+  * Formatted with UTF-8 BOM for seamless, error-free viewing in Microsoft Excel with Arabic support.
+
+* **Group Administration**:
+  * Promote to Admin / Demote from Admin with instant confirmation.
+  * Kick / Remove disruptive members safely.
+  * Add new members via phone number.
+  * Toggle Announcement Mode (Admins-only messaging) on/off with one click.
+  * Instant invite link retrieval & clipboard copying.
+
+* **Direct Messaging**:
+  * Send text announcements and messages directly to any group from the dashboard.
+
+* **Enterprise-Grade UI (shadcn/ui)**:
+  * Built using authentic **shadcn/ui** components (`Dialog`, `Table`, `Tabs`, `Card`, `Badge`, `Button`, `Input`).
+  * Pure vector SVG icons (Lucide React) with zero cluttered emojis.
+  * Clean dark-mode aesthetic with customizable Tailwind CSS design tokens.
 
 ---
 
-## 🚀 طريقة التثبيت والتشغيل (Quick Start)
+## 🛠️ Tech Stack
 
+| Layer | Technologies |
+| :--- | :--- |
+| **Backend & Engine** | Node.js (ESM), Express.js, `@whiskeysockets/baileys`, Socket.io |
+| **Frontend Framework** | React 18, TypeScript, Vite 6 |
+| **Design System** | **shadcn/ui**, Tailwind CSS 3.4, `@radix-ui/react-*`, Lucide React |
+| **Data & Formatting** | CSV generator with RFC 5987 UTF-8 header encoding, KaTeX math-ready |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+* **Node.js**: v18.0.0 or higher
+* **npm**: v9.0.0 or higher
+* An active **WhatsApp** account on your mobile device
+
+### Installation
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/anl7j/whatsapp-groups-manager.git
+   cd whatsapp-groups-manager
+   ```
+
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+3. **Build the shadcn/ui frontend**:
+   ```bash
+   npm run build
+   ```
+
+4. **Start the application**:
+   ```bash
+   npm start
+   ```
+
+5. **Open your browser**:
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+### Development Mode
+For development with hot-module-replacement (HMR):
 ```bash
-# 1. استنساخ المستودع (Clone the repository)
-git clone https://github.com/<your-username>/whatsapp-community-manager.git
-cd whatsapp-community-manager
+# Terminal 1: Run Backend Server
+npm run server
 
-# 2. تثبيت الحزم (Install dependencies)
-npm install
-
-# 3. تشغيل المنصة في وضع التطوير (Auto-reload)
+# Terminal 2: Run Vite Dev Server
 npm run dev
-
-# أو التشغيل العادي:
-npm start
 ```
 
-بعد التشغيل، افتح المتصفح على:
-👉 **`http://localhost:3000`**
+---
+
+## 📱 Linking Your WhatsApp Account
+
+1. Open the dashboard in your browser.
+2. If disconnected, a live **QR Code** will appear on screen.
+3. Open WhatsApp on your phone ➔ **Settings** (or three dots menu) ➔ **Linked Devices**.
+4. Tap **Link a Device** and scan the QR code.
+5. Your session will be safely authenticated and cached in `./auth_info_baileys/`.
 
 ---
 
-## 📱 خطوات ربط الحساب (Link Account)
-1. افتح صفحة المنصة في المتصفح.
-2. ستظهر لك شاشة بها رمز الاستجابة السريعة (**QR Code**).
-3. افتح تطبيق **واتساب** في جوالك 👈 الإعدادات (أو القائمة الثلاثية) 👈 **الأجهزة المرتبطة (Linked Devices)**.
-4. اضغط **ربط جهاز** وامسح الرمز المعروض على الشاشة.
-5. بمجرد المسح، سيتم حفظ الجلسة محلياً في مجلد `auth_info_baileys`، وستظهر كافة مجموعاتك ومجتمعاتك فوراً!
+## 🔌 REST API Reference
 
----
+The server exposes a clean REST API ready for integrations with CRMs, Zapier, Webhooks, and e-commerce platforms (e.g. Salla, Zid, Shopify):
 
-## 🔌 واجهة الـ REST API
-
-| الطريقة | المسار (Endpoint) | الوصف |
+| Method | Endpoint | Description |
 | :--- | :--- | :--- |
-| `GET` | `/api/status` | فحص حالة الاتصال ومعلومات الحساب المتصل |
-| `GET` | `/api/groups` | جلب قائمة كافة المجموعات والمجتمعات مع الإحصائيات |
-| `GET` | `/api/groups/:jid` | جلب تفاصيل مجموعة محددة وقائمة أعضائها بالكامل |
-| `POST` | `/api/groups/:jid/participants` | إضافة / طرد / ترقية / خفض رتبة عضو (`add`, `remove`, `promote`, `demote`) |
-| `POST` | `/api/groups/:jid/setting` | تعديل إعداد قفل الإرسال (`announce`) |
-| `GET` | `/api/groups/:jid/invite` | استخراج رابط دعوة المجموعة |
-| `POST` | `/api/groups/:jid/send` | إرسال رسالة نصية للمجموعة |
-| `GET` | `/api/groups/:jid/export-csv` | تحميل ملف CSV يحتوي على أرقام ورتب الأعضاء |
-| `GET` | `/api/members` | جلب قائمة كافة الأعضاء الموحّدة مع وسوم مجموعاتهم |
-| `GET` | `/api/members/export-csv` | تصدير كافة الأعضاء عبر كل المجموعات مع وسومها بملف CSV |
-| `POST` | `/api/logout` | تسجيل الخروج ومسح الجلسة للربط بحساب آخر |
+| `GET` | `/api/status` | Check WhatsApp socket status & authenticated user info |
+| `GET` | `/api/groups` | Fetch all groups & communities with summary stats |
+| `GET` | `/api/groups/:jid` | Get detailed metadata and full participant list for a group |
+| `POST` | `/api/groups/:jid/participants` | Modify participants (`add`, `remove`, `promote`, `demote`) |
+| `POST` | `/api/groups/:jid/setting` | Toggle group announcement mode (`{ type: "announce", value: true/false }`) |
+| `GET` | `/api/groups/:jid/invite` | Get group invite code and URL |
+| `POST` | `/api/groups/:jid/send` | Send a text message to a group (`{ message: "text" }`) |
+| `GET` | `/api/groups/:jid/export-csv` | Download CSV of group members with UTF-8 support |
+| `GET` | `/api/members` | Fetch unified directory of all members with group tags |
+| `GET` | `/api/members/export-csv` | Download CSV of all members tagged with their groups |
+| `POST` | `/api/logout` | Disconnect session and clear local credentials |
 
 ---
 
-## 🤝 المساهمة (Contributing)
-المشروع مفتوح المصدر ونرحب بجميع المساهمات والاقتراحات! 
-يرجى قراءة دليل المساهمة [CONTRIBUTING.md](CONTRIBUTING.md) للتعرف على كيفية إرسال الـ Pull Requests والتبليغ عن المشاكل.
+## 🔒 Security & Privacy
+
+* **Credentials are Never Committed**: Authentication tokens and session keys stored in `auth_info_baileys/` are strictly ignored by `.gitignore`. Never share or upload this folder.
+* **Privacy Compliance**: WhatsApp's LID protocol is respected; non-admin requests in privacy-protected groups display protected hashes without breaking the interface.
 
 ---
 
-## 📜 الترخيص (License)
-هذا المشروع مرخص بموجب رخصة **MIT License** - راجع ملف [LICENSE](LICENSE) لمزيد من التفاصيل.
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for more details.
+
+---
+
+## 📜 License
+
+Distributed under the **MIT License**. See [LICENSE](LICENSE) for more information.
+
+---
+
+<p align="center">
+  Crafted with care for the global open-source community.
+</p>
