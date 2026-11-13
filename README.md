@@ -161,13 +161,6 @@ The server exposes a clean REST API ready for integrations with CRMs, Zapier, We
 
 ---
 
-## 🔒 Security & Privacy
-
-* **Credentials are Never Committed**: Authentication tokens and session keys stored in `auth_info_baileys/` are strictly ignored by `.gitignore`. Never share or upload this folder.
-* **Privacy Compliance**: WhatsApp's LID protocol is respected; non-admin requests in privacy-protected groups display protected hashes without breaking the interface.
-
----
-
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
