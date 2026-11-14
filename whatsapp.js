@@ -109,8 +109,9 @@ export class WhatsAppManager {
             console.log('Connection closed, reconnecting in 3 seconds...', lastDisconnect?.error?.message || lastDisconnect?.error);
             setTimeout(() => this.init(), 3000);
           } else {
-            console.log('Logged out. Session cleared.');
+            console.log('Logged out. Session cleared. Re-initializing for new QR login in 1.5 seconds...');
             this.clearSession();
+            setTimeout(() => this.init(), 1500);
           }
         } else if (connection === 'open') {
           this.status = 'connected';
